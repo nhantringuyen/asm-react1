@@ -1,0 +1,38 @@
+.city-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.city-card:hover {
+  transform: scale(1.05);
+}
+
+.city-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.city-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.city-card-content h3 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.city-card-content p {
+  margin: 4px 0 0;
+  font-size: 30px;
+}
