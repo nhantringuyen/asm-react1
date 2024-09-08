@@ -13,19 +13,21 @@ const PropertyList = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h2 className="">Browse by property type</h2>
-      <div className="property-list">
-        {propertyTypes.map((type, index) => (
-          <PropertyItem
-            key={index}
-            name={type.name}
-            count={type.count}
-            image={type.image}
-          />
-        ))}
+    <section className="property-sec">
+      <div className="container">
+        <h2 className="sec-title">Browse by property type</h2>
+        <div className="property-list">
+          {propertyTypes.map((type, index) => (
+            <PropertyItem
+              key={index}
+              name={type.name}
+              count={type.count}
+              image={type.image}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

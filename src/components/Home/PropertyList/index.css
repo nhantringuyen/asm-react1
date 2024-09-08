@@ -3,3 +3,9 @@
   justify-content: space-between;
   gap: 20px;
 }
+.property-sec {
+  padding: 30px 0;
+}
+.sec-title {
+  margin-bottom: 20px;
+}
