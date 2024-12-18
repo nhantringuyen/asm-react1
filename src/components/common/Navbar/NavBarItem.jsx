@@ -1,15 +1,21 @@
 // NavBarItem.jsx
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./NavbarItem.module.css";
 
 const NavBarItem = ({ type, icon, active }) => {
   return (
     <li
-      className={`navbar-item ${active ? "active" : ""}`}
+      className={`${styles["navbar-item"]} ${active ? styles.active : ""}`}
       role="menuitem"
       aria-current={active ? "page" : undefined}
     >
-      <a href="#" role="button" aria-disabled="true" className="navbar-link">
+      <a
+        href="#"
+        role="button"
+        aria-disabled="true"
+        className={styles["navbar-link"]}
+      >
         <i className={`fa ${icon}`} aria-hidden="true"></i>
         <span>{type}</span>
       </a>

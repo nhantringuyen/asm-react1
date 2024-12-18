@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropertyItem from "./PropertyItem"; // Import PropertyItem
-import "./index.css";
+import styles from "./index.module.css";
 
 const PropertyList = () => {
   const [propertyTypes, setPropertyTypes] = useState([]);
@@ -13,21 +13,21 @@ const PropertyList = () => {
   }, []);
 
   return (
-    <section className="property-sec">
-      <div className="container">
-        <h2 className="sec-title">Browse by property type</h2>
-        <div className="property-list">
-          {propertyTypes.map((type, index) => (
-            <PropertyItem
-              key={index}
-              name={type.name}
-              count={type.count}
-              image={type.image}
-            />
-          ))}
+      <section className={styles["property-sec"]}>
+        <div className="container">
+          <h2 className={styles["sec-title"]}>Browse by property type</h2>
+          <div className={styles["property-list"]}>
+            {propertyTypes.map((type, index) => (
+                <PropertyItem
+                    key={index}
+                    name={type.name}
+                    count={type.count}
+                    image={type.image}
+                />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 

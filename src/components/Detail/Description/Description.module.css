@@ -1,0 +1,13 @@
+.descriptionSection {
+  flex: 3;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  line-height: 1.6;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./CityCard.css"; // Tạo file CSS riêng cho component này
+import styles from "./CityCard.module.css"; // Tạo file CSS riêng cho component này
 
 const CityCard = ({ name, subText, image }) => {
   return (
-    <div className="city-card">
+    <div className={`${styles['city-card']}`}>
       <figure>
-        <img src={image} alt={`${name} view`} className="city-card-image" />
+        <img src={image} alt={`${name} view`} className={`${styles['city-card-image']}`} />
       </figure>
-      <div className="city-card-content">
+      <div className={`${styles['city-card-content']}`}>
         <h3>{name}</h3>
         <p>{subText}</p>
       </div>

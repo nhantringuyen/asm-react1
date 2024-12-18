@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import NavBarItem from "./NavBarItem";
 // Import the JSON file
-import "./index.css";
+import styles from "./index.module.css";
 
 const Navbar = () => {
   const [navData, setNavData] = useState([]);
@@ -15,17 +15,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="navbar-header">
+    <header className={styles['navbar-header']}>
       <div className="container">
-        <div className="navbar-container">
-          <h1 className="navbar-title">Booking Website</h1>
-          <div className="navbar-buttons">
-            <button className="navbar-button">Register</button>
-            <button className="navbar-button">Login</button>
+        <div className={styles['navbar-container']}>
+          <h1 className={styles['navbar-title']}><a href="/">Booking Website</a></h1>
+          <div className={styles['navbar-buttons']}>
+            <button className={styles['navbar-button']}>Register</button>
+            <button className={styles['navbar-button']}>Login</button>
           </div>
         </div>
         <nav aria-label="Main Navigation">
-          <ul className="navbar-menu">
+          <ul className={styles['navbar-menu']}>
             {navData.map((item, index) => (
               <NavBarItem
                 key={index}

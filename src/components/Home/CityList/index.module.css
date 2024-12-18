@@ -1,0 +1,8 @@
+.city-sec{
+  margin-top: 80px;
+}
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

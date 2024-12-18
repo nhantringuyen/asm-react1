@@ -1,0 +1,36 @@
+.property-item {
+  position: relative;
+  width: 100%;
+  max-width: calc(20% - 16px);
+  overflow: hidden;
+  border-radius: 10px;
+  flex: 0 0 calc(20% - 16px);
+}
+.property-item figure {
+  padding-top: 80%;
+  position: relative;
+}
+.property-image {
+  width: 100%;
+  /* height: auto; */
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.property-info p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}

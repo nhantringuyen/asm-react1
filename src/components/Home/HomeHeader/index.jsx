@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./index.css"; // Import the CSS file for styling
+import styles from "./index.module.css"; // Import the CSS file for styling
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // Main CSS file for react-date-range
 import "react-date-range/dist/theme/default.css";
+import Button from "../../common/Button";
 const Header = () => {
   const [dateRange, setDateRange] = useState([
     {
@@ -49,59 +50,58 @@ const Header = () => {
   }, [showDatePicker]);
 
   return (
-    <div className="home-header">
-      <div className="container">
-        <h1>A lifetime of discounts? It's Genius.</h1>
-        <p>
-          Get rewarded for your travels – unlock instant savings of 10% or more
-          with a free account
-        </p>
-        <button className="btn-signin">Sign in / Register</button>
+      <div className={`${styles["home-header"]}`}>
+        <div className={`${styles["container"]} container`}>
+          <h1 className={styles["header-title"]}>A lifetime of discounts? It's Genius.</h1>
+          <p className={styles["header-description"]}>
+            Get rewarded for your travels – unlock instant savings of 10% or more
+            with a free account
+          </p>
+          <Button text="Sign in / Register"  className="primary" />
+          {/*<button className="btn-signin"></button>*/}
 
-        <div className="search-bar">
-          <div className="search-input">
-            <i className="fa fa-bed" aria-hidden="true"></i>
-            <input
-              type="text"
-              placeholder="Where are you going?"
-              aria-label="Where are you going?"
-            />
+          <div className={styles["search-bar"]}>
+            <div className={styles["search-input"]}>
+              <i className="fa fa-bed" aria-hidden="true"></i>
+              <input
+                  type="text"
+                  placeholder="Where are you going?"
+                  aria-label="Where are you going?"
+              />
+            </div>
+            <div className={`${styles["search-input"]} date-picker-container`}>
+              <i className="fa fa-calendar" aria-hidden="true"></i>
+              <input
+                  placeholder={`${dateRange[0].startDate.toLocaleDateString()} to ${dateRange[0].endDate.toLocaleDateString()}`}
+                  aria-label="Date range"
+                  onClick={() => setShowDatePicker(!showDatePicker)}
+                  readOnly
+              />
+              {showDatePicker && (
+                  <div ref={datePickerRef}>
+                    <DateRange
+                        editableDateInputs={true}
+                        moveRangeOnFirstSelection={false}
+                        className="date-range-picker"
+                        minDate={new Date()}
+                        onChange={handleDateSelect}
+                        ranges={dateRange}
+                    />
+                  </div>
+              )}
+            </div>
+            <div className={styles["search-input"]}>
+              <i className="fa fa-user" aria-hidden="true"></i>
+              <input
+                  type="text"
+                  placeholder="1 adult · 0 children · 1 room"
+                  aria-label="Guest and room details"
+              />
+            </div>
+            <Button text="Search" onClick={handleSearch} className="primary" />
           </div>
-          <div className="search-input date-picker-container">
-            <i className="fa fa-calendar" aria-hidden="true"></i>
-            <input
-              placeholder={`${dateRange[0].startDate.toLocaleDateString()} to ${dateRange[0].endDate.toLocaleDateString()}`}
-              aria-label="Date range"
-              onClick={() => setShowDatePicker(!showDatePicker)}
-              readOnly
-            />
-            {showDatePicker && (
-              <div ref={datePickerRef}>
-                <DateRange
-                  editableDateInputs={true}
-                  moveRangeOnFirstSelection={false}
-                  className="date-range-picker"
-                  minDate={new Date()}
-                  onChange={handleDateSelect}
-                  ranges={dateRange}
-                />
-              </div>
-            )}
-          </div>
-          <div className="search-input">
-            <i className="fa fa-user" aria-hidden="true"></i>
-            <input
-              type="text"
-              placeholder="1 adult · 0 children · 1 room"
-              aria-label="Guest and room details"
-            />
-          </div>
-          <button className="btn-search" onClick={handleSearch}>
-            Search
-          </button>
         </div>
       </div>
-    </div>
   );
 };
 

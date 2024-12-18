@@ -1,0 +1,37 @@
+.pricing {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+  
+  .priceBox {
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .price span {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .bookButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .bookButton:hover {
+    background-color: #0056b3;
+  }

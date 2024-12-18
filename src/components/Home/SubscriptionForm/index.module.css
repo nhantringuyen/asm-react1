@@ -1,0 +1,46 @@
+.subscription-container {
+    background-color: #003580; /* Dark blue background */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .subscription-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .subscription-container p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .email-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 250px;
+  }
+  
+  .subscribe-button {
+    padding: 10px 20px;
+    background-color: #0071c2; /* Light blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #005da6; /* Darker blue on hover */
+  }
+  

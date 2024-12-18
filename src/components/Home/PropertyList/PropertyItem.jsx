@@ -1,13 +1,13 @@
 import React from "react";
-import "./PropertyItem.css"; // Đảm bảo bạn có file CSS cho PropertyItem
+import styles from "./PropertyItem.module.css"; // Đảm bảo bạn có file CSS cho PropertyItem
 
 const PropertyItem = ({ name, count, image }) => {
   return (
-    <div className="property-item">
+    <div className={styles["property-item"]}>
       <figure>
-        <img src={image} alt={name} className="property-image" />
+        <img src={image} alt={name} className={styles["property-image"]} />
       </figure>
-      <div className="property-info">
+      <div className={styles["property-info"]}>
         <h3>{name}</h3>
         <p>{count} properties</p>
       </div>

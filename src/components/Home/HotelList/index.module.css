@@ -1,0 +1,11 @@
+  .hotel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .hotel-sec{
+    padding-bottom: 40px;
+  }
+  .sec-title {
+      margin-bottom: 20px;
+  }

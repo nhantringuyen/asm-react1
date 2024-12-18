@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CityCard from "./CityCard"; // Đảm bảo bạn import đúng đường dẫn của CityCard
-import "./index.css"; // Đảm bảo bạn có file CSS cho CityList
+import styles from "./index.module.css"; // Đảm bảo bạn có file CSS cho CityList
 
 const CityList = () => {
   const [cities, setCities] = useState([]);
@@ -19,9 +19,9 @@ const CityList = () => {
   }, []);
 
   return (
-    <section className="city-sec">
+    <section className={`${styles['city-sec']}`}>
       <div className="container">
-        <div className="city-list">
+        <div className={`${styles['city-list']}`}>
           {cities.map((city, index) => (
             <CityCard
               key={index}

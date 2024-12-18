@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HotelCard from "./HotelCard";
-import "./index.css"; // Đảm bảo bạn có file CSS cho CityList
+import styles from "./index.module.css";
 
 const HotelList = () => {
   const [hotels, setHotels] = useState([]);
@@ -19,15 +19,13 @@ const HotelList = () => {
   }, []);
 
   return (
-    <section className="hotel-sec">
+    <section className={styles["hotel-sec"]}>
       <div className="container">
-        <div className="hotel-list">
-          <h2>Homes guests love</h2>
-          <div className="hotel-cards">
-            {hotels.map((hotel, index) => (
-              <HotelCard key={index} hotel={hotel} />
-            ))}
-          </div>
+        <h2 className={styles["sec-title"]}>Homes guests love</h2>
+        <div className={styles["hotel-cards"]}>
+          {hotels.map((hotel, index) => (
+            <HotelCard key={index} hotel={hotel} />
+          ))}
         </div>
       </div>
     </section>
@@ -35,3 +33,4 @@ const HotelList = () => {
 };
 
 export default HotelList;
+

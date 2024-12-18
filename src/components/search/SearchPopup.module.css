@@ -1,0 +1,71 @@
+/* Styles for SearchPopup */
+.search-popup {
+    background-color: #ffd700; /* Màu vàng nền */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .search-popup__title {
+    color: #8a6d3b;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-popup__form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .search-popup__form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .search-popup__form input[type="text"],
+  .search-popup__form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .form-group fieldset {
+    border: none;
+    padding: 0;
+  }
+  
+  .form-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-inline label {
+    flex-basis: 60%;
+    font-size: 14px;
+  }
+  
+  .form-inline input {
+    flex-basis: 35%;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .search-popup__button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Màu xanh của nút */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-popup__button:hover {
+    background-color: #0056b3; /* Màu xanh khi hover */
+  }
+  

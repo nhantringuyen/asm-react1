@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+/*.headerContent {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  width: 100%;*/
+/*}*/
+
+.name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.address {
+  font-size: 14px;
+  color: #666666;
+}
+
+.distance {
+  font-size: 14px;
+  color: #0071c2;
+}
+
+.price {
+  font-size: 14px;
+  color: green;
+}
+
+
+
+.bookButton:hover {
+  background-color: #0056b3;
+}

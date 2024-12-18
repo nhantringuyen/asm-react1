@@ -4,15 +4,21 @@ import Header from "../../components/Home/HomeHeader";
 import CityList from "../../components/Home/CityList";
 import PropertyList from "../../components/Home/PropertyList";
 import HotelList from "../../components/Home/HotelList";
+import SubscriptionForm from "../../components/Home/SubscriptionForm";
+import Footer from "../../components/common/Footer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Header />
-      <CityList />
-      <PropertyList />
-      <HotelList />
+      <main>
+        <Header />
+        <CityList />
+        <PropertyList />
+        <HotelList />
+        <SubscriptionForm />
+      </main>
+      <Footer />
     </>
   );
 };
