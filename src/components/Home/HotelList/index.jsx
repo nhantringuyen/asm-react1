@@ -7,15 +7,19 @@ const HotelList = () => {
 
   useEffect(() => {
     // Fetch dữ liệu từ file JSON trong thư mục public/data
-    fetch("/data/hotel_list.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setHotels(data))
-      .catch((error) => console.error("Error fetching JSON:", error));
+      const fetchData = async () => {
+          try {
+              const response = await fetch("/data/hotel_list.json");
+              if (!response.ok) {
+                  throw new Error("Network response was not ok");
+              }
+              const data = await response.json();
+              setHotels(data);
+          } catch (error) {
+              console.error("Fetch error:", error); // Handle errors
+          }
+      };
+      fetchData();
   }, []);
 
   return (

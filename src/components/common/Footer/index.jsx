@@ -6,10 +6,19 @@ const Footer = () => {
 
   // Fetching data from footer.json
   useEffect(() => {
-    fetch('/data/footer.json') // Make sure footer.json is placed correctly in the public/data folder
-      .then((response) => response.json())
-      .then((data) => setFooterData(data))
-      .catch((error) => console.error('Error fetching JSON:', error));
+      const fetchData = async () => {
+          try {
+              const response = await fetch("/data/footer.json");
+              if (!response.ok) {
+                  throw new Error("Network response was not ok");
+              }
+              const data = await response.json();
+              setFooterData(data);
+          } catch (error) {
+              console.error("Fetch error:", error); // Handle errors
+          }
+      };
+      fetchData();
   }, []);
 
   return (

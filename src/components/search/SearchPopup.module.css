@@ -68,4 +68,7 @@
   .search-popup__button:hover {
     background-color: #0056b3; /* Màu xanh khi hover */
   }
-  
+  .date-range-picker{
+    position: relative;
+    z-index: 1;
+  }

@@ -8,10 +8,19 @@ const Navbar = () => {
   const [navData, setNavData] = useState([]);
 
   useEffect(() => {
-    fetch("/data/navBar.json") // Fetch from public folder
-      .then((response) => response.json())
-      .then((data) => setNavData(data))
-      .catch((error) => console.error("Error fetching JSON:", error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/navBar.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setNavData(data);
+      } catch (error) {
+        console.error("Fetch error:", error); // Handle errors
+      }
+    };
+    fetchData();
   }, []);
 
   return (

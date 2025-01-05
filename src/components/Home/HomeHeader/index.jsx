@@ -69,9 +69,10 @@ const Header = () => {
                   aria-label="Where are you going?"
               />
             </div>
-            <div className={`${styles["search-input"]} date-picker-container`}>
+            <div className={`${styles["search-input"]} ${styles["date-picker-container"]}`}
+            >
               <i className="fa fa-calendar" aria-hidden="true"></i>
-              <input
+              <input type="text"
                   placeholder={`${dateRange[0].startDate.toLocaleDateString()} to ${dateRange[0].endDate.toLocaleDateString()}`}
                   aria-label="Date range"
                   onClick={() => setShowDatePicker(!showDatePicker)}
@@ -82,7 +83,7 @@ const Header = () => {
                     <DateRange
                         editableDateInputs={true}
                         moveRangeOnFirstSelection={false}
-                        className="date-range-picker"
+                        className={`${styles["date-range-picker"]}`}
                         minDate={new Date()}
                         onChange={handleDateSelect}
                         ranges={dateRange}

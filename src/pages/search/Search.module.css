@@ -1,0 +1,18 @@
+  .app__main {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+  }
+  
+  .app__search-popup {
+    width: 25%;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .app__search-list {
+    width: 75%;
+    padding: 20px;
+  }
+
+  

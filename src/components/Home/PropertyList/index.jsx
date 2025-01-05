@@ -6,10 +6,19 @@ const PropertyList = () => {
   const [propertyTypes, setPropertyTypes] = useState([]);
 
   useEffect(() => {
-    fetch("/data/type.json") // Fetch dữ liệu từ file JSON trong thư mục public/data
-      .then((response) => response.json())
-      .then((data) => setPropertyTypes(data))
-      .catch((error) => console.error("Error fetching JSON:", error));
+      const fetchData = async () => {
+          try {
+              const response = await fetch("/data/type.json");
+              if (!response.ok) {
+                  throw new Error("Network response was not ok");
+              }
+              const data = await response.json();
+              setPropertyTypes(data);
+          } catch (error) {
+              console.error("Fetch error:", error); // Handle errors
+          }
+      };
+      fetchData();
   }, []);
 
   return (

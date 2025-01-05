@@ -15,15 +15,19 @@ const Detail = () => {
 
   useEffect(() => {
     // Fetch dữ liệu từ file JSON trong thư mục public/data
-    fetch("/data/detail.json")
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/detail.json");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json();
-      })
-      .then((data) => setHotel(data))
-      .catch((error) => console.error("Error fetching JSON:", error));
+        const data = await response.json();
+        setHotel(data);
+      } catch (error) {
+        console.error("Fetch error:", error); // Handle errors
+      }
+    };
+    fetchData();
   }, []);
 
   if (!hotel) {
